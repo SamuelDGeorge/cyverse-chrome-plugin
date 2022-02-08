@@ -1,0 +1,14 @@
+ 
+
+{
+  "user": "CyVerseID",
+  "Log Start Time": "Start Time Timestamp",
+  "logArray": [
+    {
+      "timestamp": "Event Timestamp",
+      "url": "Current URL",
+      "eventType": "Type of Event",
+      "event": "Event that Occured"
+    }
+  ]
+}

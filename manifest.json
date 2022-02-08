@@ -1,0 +1,47 @@
+{
+  "name": "CyVerse Logging",
+  "description": "A Plugin for Tracking Activity in CyVerse",
+  "version": "1.0",
+  "manifest_version": 3,
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "service-workers/backgroundProcess.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dnasubway.cyverse.org/*",
+        "https://sites.google.com/*",
+        "https://de.cyverse.org/*"
+      ],
+      "js": ["service-workers/pageChange.js"]
+    },
+    {
+      "matches": ["https://dnasubway.cyverse.org/*"],
+      "js": ["service-workers/subwayClicks.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "downloads",
+    "activeTab",
+    "declarativeContent"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "ui/popup.html",
+    "default_icon": {
+      "16": "/images/cyverse16.png",
+      "32": "/images/cyverse32.png",
+      "48": "/images/cyverse48.png",
+      "128": "/images/cyverse128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/cyverse16.png",
+    "32": "/images/cyverse32.png",
+    "48": "/images/cyverse48.png",
+    "128": "/images/cyverse128.png"
+  }
+}
