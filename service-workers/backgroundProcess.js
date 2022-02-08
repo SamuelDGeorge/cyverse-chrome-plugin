@@ -102,11 +102,10 @@ async function postLog(fullLog) {
   };
 
   console.log(fullLog);
-  /*
+
   fetch(depositURL, toPost)
     .then((res) => console.log(res))
     .catch((error) => console.log(error));
-    */
 }
 
 function whitelisted(url) {
