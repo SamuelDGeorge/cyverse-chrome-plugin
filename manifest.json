@@ -19,6 +19,10 @@
     {
       "matches": ["https://dnasubway.cyverse.org/*"],
       "js": ["service-workers/subwayClicks.js"]
+    },
+    {
+      "matches": ["https://de.cyverse.org/*"],
+      "js": ["service-workers/discoveryClicks.js"]
     }
   ],
   "permissions": [

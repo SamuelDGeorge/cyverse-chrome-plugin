@@ -48,7 +48,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             timestamp: new Date().toString(),
             url: changeInfo.url,
             eventType: "URL",
-            event: "Loading",
+            event: "Internal URL Change",
           });
           chrome.storage.local.set({ fullLog: fullLog }, function () {});
         }

@@ -401,7 +401,7 @@ function addEntry(currentClick, addClick) {
           timestamp: new Date().toString(),
           url: document.URL,
           eventType: "Subway Click",
-          event: addClick,
+          event: event,
         });
         chrome.storage.local.set({ fullLog: subLog }, function () {});
       }
