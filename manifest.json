@@ -25,13 +25,7 @@
       "js": ["service-workers/discoveryClicks.js"]
     }
   ],
-  "permissions": [
-    "tabs",
-    "storage",
-    "downloads",
-    "activeTab",
-    "declarativeContent"
-  ],
+  "permissions": ["tabs", "storage", "activeTab", "declarativeContent"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "ui/popup.html",
