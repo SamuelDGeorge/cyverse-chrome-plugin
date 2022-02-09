@@ -5,7 +5,6 @@ var word = "";
 var clickedElement = "";
 
 document.onclick = subClickListener;
-document.body.style.backgroundColor = "blue";
 
 function clickOrigin(e) {
   var target = e.target;
@@ -387,6 +386,10 @@ function typeOfElement(e) {
 
 function addEntry(currentClick, addClick) {
   console.log(addClick);
+  let event = addClick;
+  if (currentClick !== undefined) {
+    event = addClick + "-" + currentClick;
+  }
   chrome.storage.local
     .get("fullLog")
     .then((ret) => {
