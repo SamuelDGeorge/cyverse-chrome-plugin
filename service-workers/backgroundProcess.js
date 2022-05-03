@@ -1,5 +1,23 @@
-//reset log
-chrome.storage.local.set({ fullLog: {} }, function () {});
+//initialize log
+let fullLog = {};
+let lastSeen = {};
+
+//load or build new log
+chrome.storage.local
+  .get("fullLog")
+  .then((ret) => {
+    let loadedLog = ret["fullLog"];
+    console.log(loadedLog);
+    if (loadedLog == undefined) {
+      fullLog = initializeLog();
+      chrome.storage.local.set({ fullLog: fullLog }, function () {});
+    } else {
+      fullLog = loadedLog;
+    }
+  })
+  .catch((err) => {
+    alert(err + "Error Occured Getting Log From Local Storage!");
+  });
 
 //set whitelist
 const whitelist = [
@@ -8,27 +26,27 @@ const whitelist = [
   "https://de.cyverse.org",
 ];
 
-//initialize log and put in local storage
-var startDate = new Date();
-var oldLink;
-var user = "CyVerseDefaultUser";
-const logNum = Math.floor(Math.random() * 100000000);
-const logID = user + "-" + String(logNum);
-let fullLog = {
-  logID: logID,
-  user: user,
-  logStart: startDate.toString(),
-  logArray: [
-    {
-      timestamp: startDate.toString(),
-      url: "/",
-      event: "Plugin Installed",
-      eventType: "System",
-    },
-  ],
-};
-chrome.storage.local.set({ fullLog: fullLog }, function () {});
-let lastSeen = {};
+function initializeLog() {
+  const startDate = new Date();
+  var oldLink;
+  var user = "CyVerseDefaultUser";
+  const logNum = Math.floor(Math.random() * 100000000);
+  const logID = user + "-" + String(logNum);
+  let fullLogInit = {
+    logID: logID,
+    user: user,
+    logStart: startDate.toString(),
+    logArray: [
+      {
+        timestamp: startDate.toString(),
+        url: "/",
+        event: "Plugin Installed",
+        eventType: "System",
+      },
+    ],
+  };
+  return fullLogInit;
+}
 
 //listen for URL changes without page loading
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
