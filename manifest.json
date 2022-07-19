@@ -12,7 +12,8 @@
       "matches": [
         "https://dnasubway.cyverse.org/*",
         "https://sites.google.com/*",
-        "https://de.cyverse.org/*"
+        "https://de.cyverse.org/*",
+        "https://docs.google.com/forms/*"
       ],
       "js": ["service-workers/pageChange.js"]
     },
