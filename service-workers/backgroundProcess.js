@@ -99,10 +99,11 @@ async function sendLog() {
 
 async function postLog(fullLog) {
   const depositURL =
-    "https://us-south.functions.appdomain.cloud/api/v1/web/ORG-UNC-dist-seed-james_dev/cyverse/add-cyverse-log";
+    "https://us-east-1.aws.data.mongodb-api.com/app/rest-api-vsfoo/endpoint/add_log?db=studies&collection=cyverse";
 
   const toSendBody = {
     body: {
+      password: "sYCUBa*shZKU4F-yxHrTk8D7FHo4xbBBV.-BK!-L",
       log_id: fullLog.logID,
       machine_id: fullLog.user,
       course_id: "Cyverse_Cloud_Tutorial",
