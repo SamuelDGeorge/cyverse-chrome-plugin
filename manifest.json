@@ -13,7 +13,8 @@
         "https://dnasubway.cyverse.org/*",
         "https://sites.google.com/*",
         "https://de.cyverse.org/*",
-        "https://docs.google.com/forms/*"
+        "https://docs.google.com/forms/*",
+        "https://www.learn-c.org/*"
       ],
       "js": ["service-workers/pageChange.js"]
     },
