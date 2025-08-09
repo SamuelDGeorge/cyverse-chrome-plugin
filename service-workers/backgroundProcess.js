@@ -99,7 +99,7 @@ async function sendLog() {
 
 async function postLog(fullLog) {
   const depositURL =
-    "https://us-east-1.aws.data.mongodb-api.com/app/rest-api-vsfoo/endpoint/add_log?db=studies&collection=cyverse";
+    "https://lb4qj4y2suhukbhyrxmfy47qqe0ymmpf.lambda-url.us-east-1.on.aws?db=studies&collection=dewan-fall-2025-chrome";
 
   const toSendBody = {
     body: {
